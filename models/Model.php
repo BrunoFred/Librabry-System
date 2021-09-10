@@ -3,8 +3,9 @@
 abstract class Model
 {
     private $table = null;
-    private $connection = null;   
-
+    private $tableId = null;
+    private $connection = null;
+    
     private $host = 'localhost';
     private $port = '5432';
     private $dbName = 'library';
@@ -22,6 +23,11 @@ abstract class Model
         );
     }
 
+    private function desconnect()
+    {
+        pg_close($this->connection);
+    }
+
     protected function setTable(string $table)
     {
         $this->table = $table;
@@ -30,9 +36,19 @@ abstract class Model
     public function all()
     {
         $this->connect();
-
         $result = pg_query($this->connection, "select * from $this->table");
+        $this->desconnect();
         return json_encode(pg_fetch_all($result));
+    }
+
+    public function find(int $id) 
+    {
+        $this->connect();
+        $this->tableId = $id;
+        $result = pg_query($this->connection, "select * from $this->table where id = $id");
+        $this->desconnect();
+
+        return json_encode(pg_fetch_all($result)[0]);
     }
 
     public function create(array $data)
@@ -53,22 +69,22 @@ abstract class Model
         return pg_delete($this->connection, $this->table, ['id' => $id]);
     }
 
-    public function oneToOne(string $table, string $foreignKey, string $key)
+    public function oneToOne(string $table, string $foreignKey, string $key = 'id')
     {
         $this->connect();
         $query = pg_query(
             $this->connection,
             "select $table.* from $table inner join $this->table on $this->table.$key = $table.$foreignKey" 
         );
-        return json_encode(pg_fetch_all($query));
+        return json_encode(pg_fetch_all($query)[0]);
     }
 
-    public function oneToMany(string $table, string $foreignKey, string $key)
+    public function oneToMany(string $table, string $foreignKey, string $key = 'id')
     {
         $this->connect();
         $query = pg_query(
             $this->connection,
-            "select $table.* from $table inner join $this->table on $this->table.$key = $table.$foreignKey"
+            "select $table.* from $table inner join $this->table on $this->table.$key = $table.$foreignKey where $this->table.$key = $this->tableId"
         );
         return json_encode(pg_fetch_all($query));
     }
