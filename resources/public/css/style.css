@@ -5,7 +5,7 @@
 
                         /* Login */
 .container {
-    background-image: url(../../public/imgs/librarybg.jpg);
+    background-image: url(../../../resources/public/imgs/librarybg.jpg);
     height: 100%;
 }
 
@@ -131,12 +131,12 @@ button {
     display: grid;
     grid-template-rows: 1fr 1fr;
     padding-top: 180px;
-    background-image: url(../../public/imgs/librarybg.jpg);
+    background-image: url(../../../resources/public/imgs/librarybg.jpg);
 }
 
 .search-box, .category-link{
     margin: auto;
-    padding: 6px;
+    padding: 50px;
 }
 
 .search-box input[type=search]{
@@ -176,16 +176,17 @@ button {
 .footer{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 40px;
+    padding: 20px;
     background-color: rgba(2, 22, 58, 1);
 }
 
-.about-us h1{
+.about-us h1, .location h1{
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
+    font-family: serif;
+    font-size: 10px;
 }
 
-.footer p{
+.footer p, h1{
     color: white;
+    text-align: center;
 }
