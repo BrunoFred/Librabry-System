@@ -13,7 +13,7 @@
         <div class="main-text">
             <h1>Library</h1>
         </div>
-        <form action="#" method="post">
+        <form action="home.php" method="post">
             <div class="login-form">
                 <label>Email</label><input type=text name="email"><br><br>
                 <label>Password</label><input type=password name="password"><br><br>

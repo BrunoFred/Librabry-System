@@ -1,3 +1,5 @@
+let canViewMenu = false;
+
 function openModal(){
     var modal = document.getElementById("myModal");
     if (modal){
@@ -12,3 +14,13 @@ function openModal(){
     }
   }
   
+  function myFunction() {
+    canViewMenu = !canViewMenu;
+    var x = document.getElementById("menu");
+    
+    if (!!canViewMenu) {
+      x.style.display = 'block';
+    } else {
+      x.style.display = 'none';
+    }
+  }
