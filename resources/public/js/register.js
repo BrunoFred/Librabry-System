@@ -1,4 +1,5 @@
 let canViewMenu = false;
+let canMakeLoan = false;
 
 function openModal(){
     var modal = document.getElementById("myModal");
@@ -24,3 +25,15 @@ function openModal(){
       x.style.display = 'none';
     }
   }
+
+  function makeLoanContent() {
+    canMakeLoan = !canMakeLoan;
+    var x = document.getElementById("make-loan");
+    
+    if (!!canMakeLoan) {
+      x.style.display = 'block';
+    } else {
+      x.style.display = 'none';
+    }
+  }
+  

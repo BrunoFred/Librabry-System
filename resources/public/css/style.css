@@ -11,8 +11,7 @@
 
 .main-text {
     text-align: center;
-    position: relative;
-    top: 20%;
+    padding-top: 100px;
     color: white;
     font-family: Vivaldi, "Comic Sans", cursive;
     font-size: 50px;
@@ -121,8 +120,9 @@ button {
     color: black; 
     font-family: Vivaldi, "Comic Sans", cursive;
     text-decoration: none;
-    margin-right: 20px;
+    padding: 10px;
     font-size: 30px;
+    border-right: 1px solid #000;
 }
 
                         /* Home Features */
@@ -171,7 +171,7 @@ button {
     text-decoration: none;
 }
 
-                                    /* Home Footer */
+                                    /* Footer */
 
 .footer{
     display: grid;
@@ -189,4 +189,113 @@ button {
 .footer p, h1{
     color: white;
     text-align: center;
+}
+
+
+                                    /* Create User and Book */
+
+.create-user-form, .create-book-form{
+    display: grid;
+    padding-top: 250px;
+    background-image: url(../../../resources/public/imgs/librarybg.jpg);
+}
+
+.create-user-form h3, .create-book-form h3{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 50px;
+}
+
+fieldset{
+    display: inline-block;
+    text-align: center;
+    margin-left: 500px;
+    margin-bottom: 165px;
+    padding: 20px;
+    background-color: white;
+    border: solid 10px;
+    border-color: rgba(2, 22, 58, 1);;
+}
+
+legend{
+    display: none;
+}
+
+textarea{
+    resize: none;
+}
+
+                            /* Book List */
+.book-container{
+    display: grid;
+    padding-top: 250px;
+    background-image: url(../../../resources/public/imgs/librarybg.jpg);
+}
+
+.book-container h3{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 50px;
+}
+
+
+.books{
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    background-color: white;
+    border: solid 10px;
+    border-color: rgba(2, 22, 58, 1);;
+}
+
+.folder{
+    width: 200px;
+}
+
+.books ul{
+    text-align: left;
+    list-style: none;
+}
+
+.atribute-style{
+    font-size: 40px;
+}
+
+.data-style{
+    font-size: 20px;
+}
+
+.book-search-box{
+    margin: auto;
+}
+
+.book-search-box input[type=search]{
+    width: 100%;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    float: left;
+}
+
+.book-loan{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.make-loan-content{
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    background-color: black;
+    margin: 15px;
+    padding-bottom: 5px;
+    border: 1px solid #888;
 }

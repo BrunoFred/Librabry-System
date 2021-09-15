@@ -9,7 +9,7 @@
     ?>
             <a href="#">Check Loans</a>
             <a href="create_user.php">Create User</a>
-            <a href="#">Create Books</a>
+            <a href="create_book.php">Register Book</a>
             <a href="../../views/index.php">Logout</a>
         </div>
     </section>
