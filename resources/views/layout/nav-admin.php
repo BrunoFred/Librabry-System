@@ -5,10 +5,11 @@
         </div>
     </nav>
     <div id="menu" class="menu-hover">
-        <a href="../user/home.php">Home</a>
+        <a href="../admin/home.php">Home</a>
         <a href="../books.php">Books</a>
-        <a href="../user/pendant.php">Pendant</a>
-        <a href="../user/historic.php">Historic</a>
+        <a href="../admin/check_loan.php">Check Loans</a>
+        <a href="../admin/create_user.php">Crate User</a>
+        <a href="../admin/create_book.php">Register Book</a>
         <a href="../index.php">Logout</a>
         </div>
 </section>

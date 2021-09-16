@@ -5,13 +5,8 @@
 </head>
 <body>
     <?php
-        include("../layout/nav.php")
+        include("../layout/nav-admin.php")
     ?>
-            <a href="#">Check Loans</a>
-            <a href="create_user.php">Create User</a>
-            <a href="create_book.php">Register Book</a>
-            <a href="../../views/index.php">Logout</a>
-        </div>
     </section>
     <div class="create-user-form">
         <h3>Create an user here</h3>

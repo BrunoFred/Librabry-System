@@ -36,4 +36,3 @@ function openModal(){
       x.style.display = 'none';
     }
   }
-  

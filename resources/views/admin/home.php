@@ -5,14 +5,8 @@
 </head>
 <body>
     <?php
-        include("../layout/nav.php")
+        include("../layout/nav-admin.php")
     ?>
-            <a href="#">Check Loans</a>
-            <a href="create_user.php">Create User</a>
-            <a href="create_book.php">Register Book</a>
-            <a href="../../views/index.php">Logout</a>
-        </div>
-    </section>
     <section class="home-features">
         <div class="search-box">
             <h3>Looking for a book in especific? <br>
