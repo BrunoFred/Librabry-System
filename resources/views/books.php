@@ -15,8 +15,8 @@ include("./layout/head.php")
             </div>
         </nav>
         <div id="menu" class="menu-hover">
-            <a href="../views/admin/home.php">Home</a>
-            <a href="books.php">Books</a>
+            <a href="/home">Home</a>
+            <a href="/books.php">Books</a>
             <a href="../../resources/views/admin/create_user.php">Create User</a>
             <a href="../../resources/views/admin/create_book.php"">Register Book</a>
             <a href=" ../../views/index.php">Logout</a>
@@ -30,7 +30,7 @@ include("./layout/head.php")
     </div>
     <?php foreach ($books as $book){ ?>
         <div class="books">
-            <input type="image" class="folder" src=<?= $book['book_cover']?> onclick="makeLoanContent()">
+            <img class="folder" src=<?= $book['book_cover']?>>
             <ul>
                 <h1>Nome: <?= $book['name'] ?></h1>
                 <h1>Autor: <?= $book['author'] ?></h1>
@@ -38,13 +38,9 @@ include("./layout/head.php")
                 <h1>Quantidade: <?= $book['quantity'] ?></h1>
                 <h1>Status: <?= $book['status'] ?></h1>
             </ul>
-        </div>
-        <div id="make-loan" class="book-loan">
-            <div class="make-loan-content">
-                <span class="close" onclick="makeLoanContent()">&times;</span>
+            <div class="book-description">
                 <h4>Description</h4>
                 <h1><?= $book['description'] ?></h1>
-                <button type="submit">Get Book</button><br>
             </div>
         </div>
     <?php } ?>
