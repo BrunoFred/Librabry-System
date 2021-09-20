@@ -36,9 +36,9 @@ abstract class Model
     public function all()
     {
         $this->connect();
-        $result = pg_query($this->connection, "select * from $this->table");
+        $result = pg_query($this->connection, "SELECT * FROM $this->table");
         $this->desconnect();
-        return json_encode(pg_fetch_all($result));
+        return (pg_fetch_all($result));
     }
 
     public function find(int $id) 
@@ -48,7 +48,7 @@ abstract class Model
         $result = pg_query($this->connection, "select * from $this->table where id = $id");
         $this->desconnect();
 
-        return json_encode(pg_fetch_all($result)[0]);
+        return (pg_fetch_all($result)[0]);
     }
 
     public function create(array $data)
@@ -76,7 +76,7 @@ abstract class Model
             $this->connection,
             "select $table.* from $table inner join $this->table on $this->table.$key = $table.$foreignKey" 
         );
-        return json_encode(pg_fetch_all($query)[0]);
+        return (pg_fetch_all($query)[0]);
     }
 
     public function oneToMany(string $table, string $foreignKey, string $key = 'id')
@@ -86,6 +86,6 @@ abstract class Model
             $this->connection,
             "select $table.* from $table inner join $this->table on $this->table.$key = $table.$foreignKey where $this->table.$key = $this->tableId"
         );
-        return json_encode(pg_fetch_all($query));
+        return (pg_fetch_all($query));
     }
 }

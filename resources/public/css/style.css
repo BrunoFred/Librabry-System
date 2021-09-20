@@ -243,7 +243,7 @@ textarea{
 
 .books{
     display: grid;
-    grid-template-columns: 0.25fr 1fr;
+    grid-template-columns: 0.25fr 1fr 1fr;
     background-color: white;
     border: solid 10px;
     border-color: rgba(2, 22, 58, 1);;
@@ -253,10 +253,11 @@ textarea{
     width: 200px;
 }
 
-.books ul{
+.books ul h1{
     text-align: left;
     list-style: none;
-    padding-top: 3%;
+    padding-top: 1.9%;
+    color: black;
 }
 
 .atribute-style{
@@ -301,10 +302,15 @@ textarea{
     border-color: rgba(2, 22, 58, 1);
     position: absolute;
     top: 15%;
+    font-size: 15px;
 }
 
 .make-loan-content h4{
     text-align: center;
+}
+
+.make-loan-content h1{
+    color: black;
 }
 
                             /* Check Loan , User Historic, User Pendant*/

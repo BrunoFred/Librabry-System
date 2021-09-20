@@ -16,10 +16,7 @@ include("./layout/head.php")
         </nav>
         <div id="menu" class="menu-hover">
             <a href="../views/admin/home.php">Home</a>
-            <a href="../books.php">Books</a>
-            <a href="#">Pendant</a>
-            <a href="#">Historic</a>
-            <a href="#">Check Loans</a>
+            <a href="books.php">Books</a>
             <a href="../../resources/views/admin/create_user.php">Create User</a>
             <a href="../../resources/views/admin/create_book.php"">Register Book</a>
             <a href=" ../../views/index.php">Logout</a>
@@ -31,29 +28,35 @@ include("./layout/head.php")
             <input type="search" placeholder="Search..">
         </div>
     </div>
-    <div class="books">
-        <input type="image" class="folder" src="../../resources/public/imgs/ohobbit.jpg" onclick="makeLoanContent()">
-        <ul class="book-atribute">
-            <li class="atribute-style">Book Name</li>
-            <p class="data-style">O Hobbit</p>
-            <li class="atribute-style">Author</li>
-            <p class="data-style">Tolkien</p>
-            <li class="atribute-style">Category</li>
-            <p class="data-style">Adventure</p>
-        </ul>
-    </div>
-    <section>
+    <?php foreach ($books as $book){ ?>
+        <div class="books">
+            <input type="image" class="folder" src=<?= $book['book_cover']?> onclick="makeLoanContent()">
+            <ul>
+                <h1>Nome: <?= $book['name'] ?></h1>
+                <h1>Autor: <?= $book['author'] ?></h1>
+                <h1>Categoria: <?= $book['category'] ?></h1>
+                <h1>Quantidade: <?= $book['quantity'] ?></h1>
+                <h1>Status: <?= $book['status'] ?></h1>
+            </ul>
+        </div>
         <div id="make-loan" class="book-loan">
             <div class="make-loan-content">
                 <span class="close" onclick="makeLoanContent()">&times;</span>
                 <h4>Description</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacus urna, dignissim sit amet enim in, fringilla dignissim erat. Praesent vitae vestibulum lectus, vitae lobortis massa. Donec quis nisl scelerisque risus dapibus condimentum vel ut nunc. Morbi ut odio eu quam vulputate porttitor. Duis dignissim lorem vel lectus condimentum facilisis. Nullam est orci, dignissim eget volutpat vel, tempus vitae justo. Nullam quis diam facilisis, molestie nunc id, ornare ante. Etiam venenatis ex quis vestibulum egestas. Integer in metus gravida, efficitur eros vitae, egestas est. Phasellus commodo mi eros, eu ornare purus cursus ac. Nam nec mollis eros, et condimentum mauris. Integer consectetur non velit non pharetra. Nam iaculis, magna sed iaculis consequat, quam sapien congue magna, sed tempus est odio nec mauris. Aenean ac hendrerit velit, et porttitor libero. </p>
+                <h1><?= $book['description'] ?></h1>
                 <button type="submit">Get Book</button><br>
             </div>
         </div>
-    </section>
-    <?php
-        include("../../resources/views/layout/footer.php")
-    ?>
+    <?php } ?>
+    <section class="footer">
+    <div class="about-us">
+        <p>About us: </p><br>
+        <h1>Our goal is to share knowledge and passion for books throughout the world</h1>
+    </div>
+    <div class="location">
+        <p>Visit us!</p><br>
+        <h1>Street XV de Novembro, Guarapuava - PR, Brazil</h1>
+    </div>
+</section>
 </body>
 </html>

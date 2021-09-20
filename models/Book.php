@@ -1,11 +1,11 @@
 <?php
 
-require 'Models/Model.php';
+require 'Model.php';
 
 class Book extends Model
 {
     private $model;
-    private $table = 'books';
+    protected $table = 'books';
 
     public function __construct()
     {
@@ -17,4 +17,5 @@ class Book extends Model
     {
         return $this->oneToOne('loans', 'book_id', 'id');
     }
+
 }

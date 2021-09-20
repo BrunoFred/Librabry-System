@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library System</title>
     <link rel="icon" href="../../resources/public/imgs/Robinweatherall-Library-Books.ico" type="image/x-icon">
-    <link type="text/css" rel="stylesheet" href="../public/css/style.css">
+    <link type="text/css" rel="stylesheet" href="../../resources/public/css/style.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <div class="main-text">
             <h1>Library</h1>
         </div>
-        <form action="../views/user/home.php" method="post">
+        <form action="/resources/views/admin/home.php" method="post">
             <div class="login-form">
                 <label>Email</label><input type=text name="email"><br><br>
                 <label>Password</label><input type=password name="password"><br><br>
