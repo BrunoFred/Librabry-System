@@ -1,11 +1,11 @@
 <?php
-    include("../layout/head.php")
+    include "./resources/views/layout/head.php";
 ?>
     <title>Create User</title>
 </head>
 <body>
     <?php
-        include("../layout/nav-admin.php")
+        include "./resources/views/layout/nav-admin.php";
     ?>
     </section>
     <div class="create-user-form">
@@ -37,8 +37,8 @@
         </fieldset>
     </form>
     <?php
-        include("../layout/footer.php")
+        include "./resources/views/layout/footer.php";
     ?> 
-    <script src="../../public/js/register.js"></script>
+    <script src="../../../resources/public/js/register.js"></script>
 </body>
 </html>

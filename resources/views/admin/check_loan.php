@@ -1,11 +1,11 @@
 <?php
-    include("../layout/head.php")
+    include './resources/views/layout/head.php';
 ?>
     <title>Check Loans</title>
 </head>
 <body>
     <?php
-        include("../layout/nav-admin.php")
+        include './resources/views/layout/nav-admin.php';
     ?>
     <div class="check-loans">
         <h3>Check loans info</h3>
@@ -13,20 +13,23 @@
             <input type="search" placeholder="Search..">
         </div>
         <fieldset>
-            <h6>Loan ID</h6><br>
-            <p>text</p><br>
-            <h6>User</h6><br>
-            <p>text</p><br>
-            <h6>Book</h6><br>
-            <p>text</p><br>
-            <h6>Start Date</h6><br>
-            <p>text</p><br>
-            <h6>End date</h6><br>
+            <?php foreach ($loans as $loan){ ?>
+                <h6>Loan ID</h6><br>
+                <h1><?= $loan['id'] ?></h1>
+                <h6>User</h6><br>
+                <h1><?= $loan['user_id'] ?></h1>
+                <h6>Book</h6><br>
+                <h1><?= $loan['book_id'] ?></h1>
+                <h6>Start Date</h6><br>
+                <h1><?= $loan['date_start'] ?></h1>
+                <h6>End date</h6><br>
+                <h1><?= $loan['date_end'] ?></h1>
+            <?php }?>
         </fieldset>
     </div>
     <?php
-        include("../layout/footer.php")
+        include './resources/views/layout/footer.php';
     ?> 
-    <script src="../../public/js/register.js"></script>
+    <script src="../../../resources/public/js/register.js"></script>
 </body>
 </html>

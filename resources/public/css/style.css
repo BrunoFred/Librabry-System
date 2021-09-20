@@ -331,6 +331,10 @@ textarea{
     padding: 45px;
 }
 
+.check-loans fieldset h1{
+    color: black;
+}
+
 .loan-search-box, .historic-search-box{
     margin: auto;
 }
@@ -356,5 +360,9 @@ textarea{
 }
 
 .check-loans p, .historic p{
+    border-bottom: 1px solid;
+}
+
+.check-loans h1, .historic h1{
     border-bottom: 1px solid;
 }

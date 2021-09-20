@@ -1,25 +1,27 @@
 <?php
 
 $request = $_SERVER['REQUEST_URI'];
+require __DIR__. '/controller/LoginController.php';
 require __DIR__. '/controller/BookController.php';
+require __DIR__. '/controller/LoanController.php';
 
 switch ($request) {
     case '/' :
-        (new BookController())->index();
+        (new LoginController())->index();
         break;
-    case '/home.php' :
+    case '/home' :
         require __DIR__ . '/resources/views/admin/home.php';
         break;
     case '/books' :
         (new BookController())->index();
         break;
-    case '/check_loan.php' :
-        require __DIR__ . '/resources/views/admin/check_loan.php';
+    case '/check_loan' :
+        (new LoanController())->index();
         break;
-    case '/create_user.php' :
+    case '/create_user' :
         require __DIR__ . '/resources/views/admin/create_user.php';
         break;
-    case '/create_book.php' :
+    case '/create_book' :
         require __DIR__ . '/resources/views/admin/create_book.php';
         break;
     default:

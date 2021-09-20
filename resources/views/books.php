@@ -1,5 +1,5 @@
 <?php
-include("./layout/head.php")
+    include("./layout/head.php")
 ?>
 <link rel="icon" href="../../resources/public/imgs/Robinweatherall-Library-Books.ico" type="image/x-icon">
 <link type="text/css" rel="stylesheet" href="../../resources/public/css/style.css">
@@ -16,10 +16,10 @@ include("./layout/head.php")
         </nav>
         <div id="menu" class="menu-hover">
             <a href="/home">Home</a>
-            <a href="/books.php">Books</a>
-            <a href="../../resources/views/admin/create_user.php">Create User</a>
-            <a href="../../resources/views/admin/create_book.php"">Register Book</a>
-            <a href=" ../../views/index.php">Logout</a>
+            <a href="/books">Books</a>
+            <a href="/create_user">Create User</a>
+            <a href="/create_book">Register Book</a>
+            <a href="/">Logout</a>
         </div>
     </section>
     <div class="book-container">

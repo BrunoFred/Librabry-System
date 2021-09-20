@@ -14,7 +14,7 @@
         <div class="main-text">
             <h1>Library</h1>
         </div>
-        <form action="/resources/views/admin/home.php" method="post">
+        <form action="/home" method="post">
             <div class="login-form">
                 <label>Email</label><input type=text name="email"><br><br>
                 <label>Password</label><input type=password name="password"><br><br>

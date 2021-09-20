@@ -1,12 +1,13 @@
-<?php
-    include("../layout/head.php")
+<?php 
+    include './resources/views/layout/head.php';
 ?>
     <title>Home Admin</title>
 </head>
 <body>
-    <?php
-        include("../layout/nav-admin.php")
+    <?php 
+    include './resources/views/layout/nav-admin.php';
     ?>
+
     <section class="home-features">
         <div class="search-box">
             <h3>Looking for a book in especific? <br>
@@ -24,8 +25,8 @@
         </div>
     </section>
     <?php
-        include("../layout/footer.php")
+        include "./resources/views/layout/footer.php";
     ?>
-    <script src="../../public/js/register.js"></script>
+    <script src="../../../resources/public/js/register.js"></script>
 </body>
 </html>
