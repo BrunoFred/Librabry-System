@@ -311,31 +311,27 @@ textarea{
 
                             /* Check Loan , User Historic, User Pendant*/
 
-.check-loans, .historic{
+.check-loans, .check-users{
     display: grid;
     padding-top: 250px;
     padding-bottom: 150px;
     background-image: url(../../../resources/public/imgs/librarybg.jpg);
 }
 
-.check-loans h3, .historic h3{
+.check-loans h3, .check-users h3{
     text-align: center;
     font-size: 40px;
     color: white;
     padding-bottom: 50px;
 }
 
-.check-loans fieldset, .historic fieldset{
+.check-loans fieldset, .check-users fieldset{
     margin: auto;
     text-align: left;
     padding: 45px;
 }
 
-.check-loans fieldset h1{
-    color: black;
-}
-
-.loan-search-box, .historic-search-box{
+.loan-search-box{
     margin: auto;
 }
 
@@ -347,22 +343,31 @@ textarea{
     float: left;
 }
 
-.historic-search-box input[type=search]{
-    width: 100%;
+.user-search-box input[type=search]{
+    width: 20%;
     padding: 6px;
-    margin-top: 8px;
     font-size: 17px;
-    float: left;
+    margin: auto;
 }
 
-.check-loans h6, .historic h6{
+.check-loans h6, .check-users h6{
     font-size: 30px;
 }
 
-.check-loans p, .historic p{
+.check-loans p, .check-users p{
     border-bottom: 1px solid;
 }
 
-.check-loans h1, .historic h1{
+.check-loans h1{
     border-bottom: 1px solid;
+}
+
+.loans-list, .users-list{
+    border: solid black 2px; 
+    margin-bottom:20px;
+}
+
+.loans-list h6, .users-list h6{
+    color: black;
+    font-size: 20px;
 }

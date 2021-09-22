@@ -4,6 +4,7 @@ $request = $_SERVER['REQUEST_URI'];
 require __DIR__. '/controller/LoginController.php';
 require __DIR__. '/controller/BookController.php';
 require __DIR__. '/controller/LoanController.php';
+require __DIR__. '/controller/UserController.php';
 
 switch ($request) {
     case '/' :
@@ -15,8 +16,11 @@ switch ($request) {
     case '/books' :
         (new BookController())->index();
         break;
-    case '/check_loan' :
+    case '/loans' :
         (new LoanController())->index();
+        break;
+    case  '/users' :
+        (new UserController())->index();
         break;
     case '/create_user' :
         require __DIR__ . '/resources/views/admin/create_user.php';

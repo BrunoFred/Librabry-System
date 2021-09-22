@@ -15,7 +15,7 @@ class Loan extends Model
 
     public function users()
     {
-        return $this->oneToMany('users', 'id', 'user_id' );
+        return $this->oneToMany('users', 'id', 'user_id');
     }
 
     public function books()

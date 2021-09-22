@@ -1,20 +1,19 @@
 <?php
+require_once('./models/User.php');
 
-require_once('./models/Loan.php');
-
-class LoanController
+class UserController
 {
-    public $loans;
+    public $users;
 
     public function __construct()
     {
-        $this->loans = new Loan();
+        $this->users = new User();
     }
 
     public function index()
     {
-        $loans = $this->loans->all();
-        include './resources/views/admin/check_loan.php';
+        $users = $this->users->all();
+        include './resources/views/admin/check_user.php';
     }
 
     public function show()
@@ -44,6 +43,6 @@ class LoanController
 
     public function delete()
     {
- 
+
     }
 }

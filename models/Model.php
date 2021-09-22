@@ -41,7 +41,7 @@ abstract class Model
         return (pg_fetch_all($result));
     }
 
-    public function find(int $id) 
+    public function find(int $id)
     {
         $this->connect();
         $this->tableId = $id;
@@ -74,7 +74,7 @@ abstract class Model
         $this->connect();
         $query = pg_query(
             $this->connection,
-            "select $table.* from $table inner join $this->table on $this->table.$key = $table.$foreignKey" 
+            "select $table.* from $table inner join $this->table on $this->table.$key = $table.$foreignKey order by id" 
         );
         return (pg_fetch_all($query)[0]);
     }
@@ -82,10 +82,9 @@ abstract class Model
     public function oneToMany(string $table, string $foreignKey, string $key = 'id')
     {
         $this->connect();
-        $query = pg_query(
+        $result = pg_query(
             $this->connection,
-            "select $table.* from $table inner join $this->table on $this->table.$key = $table.$foreignKey where $this->table.$key = $this->tableId"
-        );
-        return (pg_fetch_all($query));
+            "select $table.* from $table inner join $this->table on $this->table.$key = $table.$foreignKey ORDER BY id");
+        return (pg_fetch_all($result));
     }
 }

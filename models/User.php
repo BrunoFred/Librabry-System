@@ -15,6 +15,6 @@ class User extends Model
 
     public function loans()
     {
-        return $this->oneToMany('loans', 'user_id', 'id' );
+        return $this->oneToMany('loans', 'user_id', 'id');
     }
 }

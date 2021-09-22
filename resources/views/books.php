@@ -17,6 +17,8 @@
         <div id="menu" class="menu-hover">
             <a href="/home">Home</a>
             <a href="/books">Books</a>
+            <a href="/loans">Loans</a>
+            <a href="/users">Users List</a>
             <a href="/create_user">Create User</a>
             <a href="/create_book">Register Book</a>
             <a href="/">Logout</a>
