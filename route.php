@@ -30,6 +30,7 @@ switch ($request) {
         break;
     case '/books/store' :
         (new BookController())->store();
+        header("Location: /books/create");
         break;
     default:
         http_response_code(404);
