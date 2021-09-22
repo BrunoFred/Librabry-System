@@ -9,8 +9,8 @@
         <a href="/books">Books</a>
         <a href="/loans">Loans List</a>
         <a href="/users">Users List</a>
-        <a href="/create_user">Create User</a>
-        <a href="/create_book">Register Book</a>
+        <a href="/users/create">Create User</a>
+        <a href="/books/create">Register Book</a>
         <a href="/">Logout</a>
         </div>
 </section>

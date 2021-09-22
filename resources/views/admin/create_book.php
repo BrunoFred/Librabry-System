@@ -10,9 +10,9 @@
     <div class="create-book-form">
         <h3>Register a book here</h3>
     <div>
-    <form action="#">
-        <fieldset>
-            <legend>Book Register:</legend>
+    <fieldset>
+        <legend>Book Register:</legend>
+        <form method="POST" action="/books/store">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name"><br><br>
             <label for="description">Description:</label><br>
@@ -24,8 +24,8 @@
             <label for="Quantity">Quantity:</label><br>
             <input type="number" id="quantity" name="quantity"><br><br>
             <input type="submit" value="Submit">
-        </fieldset>
-    </form>
+        </form>
+    </fieldset>
     <?php
         include "./resources/views/layout/footer.php";
     ?> 

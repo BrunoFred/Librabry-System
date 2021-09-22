@@ -22,11 +22,14 @@ switch ($request) {
     case  '/users' :
         (new UserController())->index();
         break;
-    case '/create_user' :
+    case '/users/create' :
         require __DIR__ . '/resources/views/admin/create_user.php';
         break;
-    case '/create_book' :
-        require __DIR__ . '/resources/views/admin/create_book.php';
+    case '/books/create' :
+        (new BookController())->create();
+        break;
+    case '/books/store' :
+        (new BookController())->store();
         break;
     default:
         http_response_code(404);

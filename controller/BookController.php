@@ -6,11 +6,22 @@ class BookController
 {
     public $book;
     public $id;
-    public $data;
-
+    protected $data;
     public function __construct()
     {
         $this->book = new Book();
+        $this->data = array(
+            "name"=>$_POST["name"],
+            "description"=>$_POST["description"],
+            "author"=>$_POST["author"],
+            "category"=>$_POST["category"],
+            "status"=>"available",
+            "quantity"=>$_POST["quantity"],
+            "book_cover"=>"/resources/public/imgs/prisoner_of_azkaban.jpg",
+            "created_at"=>NULL,
+            "updated_at"=>NULL,
+            "deleted_at"=>NULL
+        );
     }
 
     public function index()
@@ -26,12 +37,12 @@ class BookController
 
     public function create()
     {
-        // retorna a view para criar um item da tabela (eg: create_book.php or create_user.php)
+        include './resources/views/admin/create_book.php';
     }
 
     public function store()
     {
-        $store = $this->book->create($this->data);
+        $this->book->create($this->data);
     }
 
     public function edit()
