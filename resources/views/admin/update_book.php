@@ -25,7 +25,7 @@
                 <label for="Quantity">Quantity:</label><br>
                 <input type="number" id="quantity" name="quantity" value="<?= $book['quantity'] ?>">
                 <label for="book_cover">Book Cover:</label><br>
-                <input type="file" id="book_cover" name="book_cover" value="<?= $book['book_cover'] ?>">
+                <input type="text" id="book_cover" name="book_cover" value="<?= $book['book_cover'] ?>">
                 <input type="hidden" name="id" value="<?= $book['id'] ?>">
                 <button type="submit">Update</button>
             </div>

@@ -317,6 +317,10 @@ textarea{
     margin-bottom: 10px;
 }
 
+.book-button{
+    background: rgba(2, 22, 58, 1);;
+}
+
                             /* Check Loan , User Historic, User Pendant*/
 
 .check-loans, .check-users{

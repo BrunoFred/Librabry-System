@@ -19,7 +19,7 @@ class BookController
             "category"=>$_POST["category"],
             "status"=>"available",
             "quantity"=>$_POST["quantity"],
-            "book_cover"=>"{$this->book_cover_link}{$_POST["book_cover"]}",
+            "book_cover"=>$_POST["book_cover"],
             "created_at"=>NULL,
             "updated_at"=>NULL,
             "deleted_at"=>NULL

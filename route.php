@@ -37,6 +37,7 @@ switch ($request) {
         break;
     case '/books/update' :
         (new BookController())->update();
+        header("Location: /books");
         break;
     case '/books/delete' :
         (new BookController())->delete();

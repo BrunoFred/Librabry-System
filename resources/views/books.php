@@ -47,7 +47,7 @@
 
                     <form method="POST" action="/books/edit">
                         <input type="hidden" name="id" value="<?= $book['id'] ?>">
-                        <button type="submit">Update</button>
+                        <button type="submit" class="book-button">Update</button>
                     </form>
             </div>
         <?php } else {}?>
