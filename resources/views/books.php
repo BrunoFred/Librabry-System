@@ -44,6 +44,11 @@
                 <div class="book-description">
                     <h4>Description</h4>
                     <h1><?= $book['description'] ?></h1>
+
+                    <form method="POST" action="/books/edit">
+                        <input type="hidden" name="id" value="<?= $book['id'] ?>">
+                        <button type="submit">Update</button>
+                    </form>
             </div>
         <?php } else {}?>
         </div>

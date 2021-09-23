@@ -13,21 +13,26 @@
     <fieldset>
         <legend>Update Book:</legend>
         <form method="POST" action="/books/update">
-            <label for="id">Book ID:</label><br>
-            <input type="text" id="id" name="id" required><br><br>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="description">Description:</label><br>
-            <textarea columns="30" rows="10" id="description" name="description"></textarea><br><br>
-            <label for="author">Author:</label><br>
-            <input type="text" id="author" name="author"><br><br>
-            <label for="category">Category:</label><br>
-            <input type="text" id="category" name="category"><br><br>
-            <label for="Quantity">Quantity:</label><br>
-            <input type="number" id="quantity" name="quantity"><br><br>
-            <label for="book_cover">Book Cover:</label><br>
-            <input type="file" id="book_cover" name="book_cover"><br><br>
-            <input type="submit" value="Submit">
+            <div class="book-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" value="<?= $book['name'] ?>">
+                <label for="description">Description:</label>
+                <textarea columns="30" rows="10" id="description" name="description"><?= $book['description'] ?></textarea>
+                <label for="author">Author:</label><br>
+                <input type="text" id="author" name="author" value="<?= $book['author'] ?>">
+                <label for="category">Category:</label><br>
+                <input type="text" id="category" name="category" value="<?= $book['category'] ?>">
+                <label for="Quantity">Quantity:</label><br>
+                <input type="number" id="quantity" name="quantity" value="<?= $book['quantity'] ?>">
+                <label for="book_cover">Book Cover:</label><br>
+                <input type="file" id="book_cover" name="book_cover" value="<?= $book['book_cover'] ?>">
+                <input type="hidden" name="id" value="<?= $book['id'] ?>">
+                <button type="submit">Update</button>
+            </div>
+        </form>
+        <form method="POST" action="/books/delete">
+            <input type="hidden" name="id" value="<?= $book['id'] ?>">
+            <button type="submit">Remove</button>
         </form>
     </fieldset>
     <?php

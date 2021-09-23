@@ -8,7 +8,6 @@
         <a href="/home">Home</a>
         <a href="/books">Books</a>
         <a href="/books/create">Register Book</a>
-        <a href="/books/edit">Update Book</a>
         <a href="/loans">Loans List</a>
         <a href="/users">Users List</a>
         <a href="/users/create">Create User</a>

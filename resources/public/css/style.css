@@ -309,6 +309,14 @@ textarea{
     padding-top: 40px;
 }
 
+.book-form{
+    display: grid;
+}
+
+.book-form label, .book-form input, .book-form textarea {
+    margin-bottom: 10px;
+}
+
                             /* Check Loan , User Historic, User Pendant*/
 
 .check-loans, .check-users{

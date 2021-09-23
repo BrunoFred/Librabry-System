@@ -38,6 +38,10 @@ switch ($request) {
     case '/books/update' :
         (new BookController())->update();
         break;
+    case '/books/delete' :
+        (new BookController())->delete();
+        header("Location: /books");
+        break;
     default:
         http_response_code(404);
         require __DIR__ . '/views/404.php';

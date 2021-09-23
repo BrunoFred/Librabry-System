@@ -25,7 +25,6 @@ class BookController
             "deleted_at"=>NULL
         );
         $this->id = $_POST['id'];
-        $this->data_update = array_filter($this->data);
     }
 
     public function index()
@@ -51,16 +50,18 @@ class BookController
 
     public function edit()
     {
+        $id = $_POST['id'];
+        $book = (new Book())->find($id);
         include './resources/views/admin/update_book.php';
     }
 
     public function update()
     {
-        $this->book->update($this->id, $this->data_update);
+        $this->book->update($this->id, $this->data);
     }
 
     public function delete()
     {
-        $delete = $this->book->delete($this->id);
+        $this->book->delete($this->id);
     }
 }
