@@ -19,8 +19,8 @@
             <a href="/books">Books</a>
             <a href="/loans">Loans</a>
             <a href="/users">Users List</a>
-            <a href="/create_user">Create User</a>
-            <a href="/create_book">Register Book</a>
+            <a href="/users/create">Create User</a>
+            <a href="/books/create">Register Book</a>
             <a href="/">Logout</a>
         </div>
     </section>
@@ -31,19 +31,21 @@
         </div>
     </div>
     <?php foreach ($books as $book){ ?>
-        <div class="books">
-            <img class="folder" src=<?= $book['book_cover']?>>
-            <ul>
-                <h1>Nome: <?= $book['name'] ?></h1>
-                <h1>Autor: <?= $book['author'] ?></h1>
-                <h1>Categoria: <?= $book['category'] ?></h1>
-                <h1>Quantidade: <?= $book['quantity'] ?></h1>
-                <h1>Status: <?= $book['status'] ?></h1>
-            </ul>
-            <div class="book-description">
-                <h4>Description</h4>
-                <h1><?= $book['description'] ?></h1>
+        <?php if($book['name']!= NULL){?>
+            <div class="books">
+                <img class="folder" src=<?= $book['book_cover']?>>
+                <ul>
+                    <h1>Nome: <?= $book['name'] ?></h1>
+                    <h1>Autor: <?= $book['author'] ?></h1>
+                    <h1>Categoria: <?= $book['category'] ?></h1>
+                    <h1>Quantidade: <?= $book['quantity'] ?></h1>
+                    <h1>Status: <?= $book['status'] ?></h1>
+                </ul>
+                <div class="book-description">
+                    <h4>Description</h4>
+                    <h1><?= $book['description'] ?></h1>
             </div>
+        <?php } else {}?>
         </div>
     <?php } ?>
     <section class="footer">

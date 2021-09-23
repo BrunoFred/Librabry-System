@@ -32,6 +32,12 @@ switch ($request) {
         (new BookController())->store();
         header("Location: /books/create");
         break;
+    case '/books/edit' :
+        (new BookController())->edit();
+        break;
+    case '/books/update' :
+        (new BookController())->update();
+        break;
     default:
         http_response_code(404);
         require __DIR__ . '/views/404.php';

@@ -7,6 +7,8 @@ class BookController
     public $book;
     public $id;
     protected $data;
+    protected $data_update;
+    public $book_cover_link = "/resources/public/imgs/";
     public function __construct()
     {
         $this->book = new Book();
@@ -17,11 +19,13 @@ class BookController
             "category"=>$_POST["category"],
             "status"=>"available",
             "quantity"=>$_POST["quantity"],
-            "book_cover"=>"/resources/public/imgs/prisoner_of_azkaban.jpg",
+            "book_cover"=>"{$this->book_cover_link}{$_POST["book_cover"]}",
             "created_at"=>NULL,
             "updated_at"=>NULL,
             "deleted_at"=>NULL
         );
+        $this->id = $_POST['id'];
+        $this->data_update = array_filter($this->data);
     }
 
     public function index()
@@ -47,12 +51,12 @@ class BookController
 
     public function edit()
     {
-        // retorna a view para editar um item da tabela
+        include './resources/views/admin/update_book.php';
     }
 
     public function update()
     {
-        $update = $this->book->update($this->id, $this->data);
+        $this->book->update($this->id, $this->data_update);
     }
 
     public function delete()
