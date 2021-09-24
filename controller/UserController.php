@@ -4,10 +4,35 @@ require_once('./models/User.php');
 class UserController
 {
     public $users;
+    public $id;
+    protected $data;
+    protected $data_update;
 
     public function __construct()
     {
         $this->users = new User();
+        $this->data = array(
+            'name'=>$_POST['name'],
+            'email'=>$_POST['email'],
+            'password'=>$_POST['password'],
+            'phone'=>$_POST['phone'],
+            'is_admin'=>(!!$_POST['type_user']),
+            "created_at"=>NULL,
+            "updated_at"=>NULL,
+            "deleted_at"=>NULL
+        );
+
+        $this->data_update = array(
+            'email'=>$_POST['email'],
+            'password'=>$_POST['password'],
+            'name'=>$_POST['name'],
+            'phone'=>$_POST['phone'],
+            'is_admin'=>$_POST['is_admin'],
+            "created_at"=>NULL,
+            "updated_at"=>NULL,
+            "deleted_at"=>NULL
+        );
+        $this->id = $_POST['id'];
     }
 
     public function index()
@@ -18,31 +43,33 @@ class UserController
 
     public function show()
     {
-        /* $show = $this->loan->find($this->id); */
+        $this->users->find($this->id);
     }
 
     public function create()
     {
-        // retorna a view para criar um item da tabela (eg: create_book.php or create_user.php)
+        include './resources/views/admin/create_user.php';
     }
 
     public function store()
     {
-
+        $this->users->create($this->data);
     }
 
     public function edit()
     {
-        // retorna a view para editar um item da tabela
+        $id = $_POST['id'];
+        $user = (new User())->find($id);
+        include './resources/views/admin/update_user.php';
     }
 
     public function update()
     {
-
+        $this->users->update($this->id, $this->data_update);
     }
 
     public function delete()
     {
-
+        $this->users->delete($this->id);
     }
 }

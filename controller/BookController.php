@@ -30,7 +30,7 @@ class BookController
     public function index()
     {
         $books = $this->book->all();
-        include './resources/views/books.php';
+        include './resources/views/admin/books.php';
     }
 
     public function show()

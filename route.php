@@ -23,7 +23,22 @@ switch ($request) {
         (new UserController())->index();
         break;
     case '/users/create' :
-        require __DIR__ . '/resources/views/admin/create_user.php';
+        (new UserController())->create();
+        break;
+    case '/users/store' :
+        (new UserController())->store();
+        header("Location: /home");
+        break;
+    case '/users/edit' :
+        (new UserController())->edit();
+        break;
+    case '/users/update' :
+        (new UserController())->update();
+        header("Location: /users");
+        break;
+    case '/users/delete' :
+        (new UserController())->delete();
+        header("Location: /users");
         break;
     case '/books/create' :
         (new BookController())->create();

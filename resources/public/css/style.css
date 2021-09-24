@@ -321,7 +321,7 @@ textarea{
     background: rgba(2, 22, 58, 1);;
 }
 
-                            /* Check Loan , User Historic, User Pendant*/
+                            /* Check Loan*/
 
 .check-loans, .check-users{
     display: grid;
@@ -382,4 +382,17 @@ textarea{
 .loans-list h6, .users-list h6{
     color: black;
     font-size: 20px;
+}
+
+                        /*Users */
+.user-form{
+    display: grid;
+}
+
+.user-form label, .user-form input, .user-form textarea {
+    margin-bottom: 10px;
+}
+
+.book-form-button{
+    background: rgba(2, 22, 58, 1);;
 }

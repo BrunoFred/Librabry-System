@@ -18,6 +18,12 @@ include './resources/views/layout/nav-admin.php';
                 <h6>Email: <?= $user['email'] ?></h6>
                 <h6>Phone: <?= $user['phone'] ?></h6>
             </div>
+            <form method="POST" action="/users/edit">
+                <input type="hidden" name="id" value="<?= $user['id'] ?>">
+                <div class="book-button-outside">
+                    <button type="submit" class="book-button">Update</button>
+                </div>
+            </form>
         <?php } ?>
     </fieldset>
 </div>
