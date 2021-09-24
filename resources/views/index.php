@@ -27,12 +27,18 @@
         <div id="myModal" class="register">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
-                <form method="post" action="#"></form>
-                <h1>User Register</h1>
-                <label>Name</label><input type=text name="name"><br><br>
-                <label>Password</label><input type=password name="password"><br><br>
-                <label>Email</label><input type=text name="email"><br><br>
-                <label>Phone</label><input type=text name="phone"><br><br>
+                <form method="post" action="/register">
+                    <h1>User Register</h1>
+                    <label>Name</label>
+                    <input type=text name="name"><br><br>
+                    <label>Password</label>
+                    <input type=password name="password"><br><br>
+                    <label>Email</label>
+                    <input type=text name="email"><br><br>
+                    <label>Phone</label>
+                    <input type=text name="phone"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
             </div>
         </div>
     </section>

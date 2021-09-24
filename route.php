@@ -29,6 +29,10 @@ switch ($request) {
         (new UserController())->store();
         header("Location: /home");
         break;
+    case '/register' :
+        (new UserController())->registerStore();
+        header("Location: /index");
+        break;
     case '/users/edit' :
         (new UserController())->edit();
         break;

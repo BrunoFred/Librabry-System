@@ -7,6 +7,7 @@ class UserController
     public $id;
     protected $data;
     protected $data_update;
+    protected $data_register;
 
     public function __construct()
     {
@@ -32,6 +33,18 @@ class UserController
             "updated_at"=>NULL,
             "deleted_at"=>NULL
         );
+
+        $this->data_register = array(
+            'email'=>$_POST['email'],
+            'password'=>$_POST['password'],
+            'name'=>$_POST['name'],
+            'phone'=>$_POST['phone'],
+            'is_admin'=>false,
+            "created_at"=>NULL,
+            "updated_at"=>NULL,
+            "deleted_at"=>NULL
+        );
+
         $this->id = $_POST['id'];
     }
 
@@ -54,6 +67,11 @@ class UserController
     public function store()
     {
         $this->users->create($this->data);
+    }
+
+    public function registerStore()
+    {
+        $this->users->create($this->data_register);
     }
 
     public function edit()
