@@ -3,8 +3,8 @@ require_once('./models/User.php');
 
 class UserController
 {
-    public $users;
-    public $id;
+    public $users, $user;
+    public $id, $email, $password, $login;
     protected $data;
     protected $data_update;
     protected $data_register;
@@ -46,12 +46,23 @@ class UserController
         );
 
         $this->id = $_POST['id'];
+        $this->email = $_POST['email'];
+        $this->password = $_POST['password'];
     }
 
     public function index()
     {
         $users = $this->users->all();
         include './resources/views/admin/check_user.php';
+    }
+
+    public function validation()
+    {
+        $login = $this->users->authentication($this->email, $this->password);
+        if ($login == true)
+            header("Location: /home");
+        else
+            header("Location: /");
     }
 
     public function show()

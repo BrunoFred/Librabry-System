@@ -13,6 +13,9 @@ switch ($request) {
     case '/home' :
         require __DIR__ . '/resources/views/admin/home.php';
         break;
+    case '/login' :
+        (new UserController())->validation();
+        break;
     case '/books' :
         (new BookController())->index();
         break;

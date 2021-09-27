@@ -14,10 +14,10 @@
         <div class="main-text">
             <h1>Library</h1>
         </div>
-        <form action="/home" method="post">
+        <form action="/login" method="post">
             <div class="login-form">
-                <label>Email</label><input type=text name="email"><br><br>
-                <label>Password</label><input type=password name="password"><br><br>
+                <label>Email</label><input type=text name="email" id="email" required><br><br>
+                <label>Password</label><input type=password name="password" id="password" required><br><br>
                 <button type="submit">Login</button><br>
                 <button type="button" onclick="openModal()">Register</button>
             </div>
