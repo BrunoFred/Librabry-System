@@ -10,8 +10,11 @@ switch ($request) {
     case '/' :
         (new LoginController())->index();
         break;
-    case '/home' :
+    case '/admin/home' :
         require __DIR__ . '/resources/views/admin/home.php';
+        break;
+    case '/user/home' :
+        require __DIR__ . '/resources/views/user/home.php';
         break;
     case '/login' :
         (new UserController())->validation();

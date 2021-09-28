@@ -10,6 +10,7 @@
 
     <section class="home-features">
         <div class="search-box">
+            <h3>Welcome, <?= $_SESSION['name'] ?></h3><br>
             <h3>Looking for a book in especific? <br>
             <h3>Try our searchbox!</h3>
             <br><input type="search" placeholder="Search..">

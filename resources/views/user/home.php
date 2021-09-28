@@ -1,17 +1,18 @@
 <?php
-    include("../layout/head.php")
+    include './resources/views/layout/head.php';
 ?>
     <title>Home</title>
 </head>
 <body>
     <?php
-        include("../layout/nav.php")
+        include './resources/views/layout/nav.php';
     ?>
             <a href="../../views/index.php">Logout</a>
         </div>
     </section>
     <section class="home-features">
         <div class="search-box">
+            <h3>Welcome, <?= $_SESSION['name'] ?></h3><br>
             <h3>Looking for a book in especific? <br> 
             <h3>Try our searchbox!</h3>
             <br><input type="search" placeholder="Search..">
@@ -29,8 +30,8 @@
 
 
     <?php
-        include("../layout/footer.php")
+        include "./resources/views/layout/footer.php";
     ?>
-    <script src="../../public/js/register.js"></script>
+    <script src="../../../resources/public/js/register.js"></script>
 </body>
 </html>

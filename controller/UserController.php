@@ -59,10 +59,12 @@ class UserController
     public function validation()
     {
         $login = $this->users->authentication($this->email, $this->password);
-        if ($login == true)
-            header("Location: /home");
-        else
-            header("Location: /");
+        if ($login == "t")
+            header("Location: /admin/home");
+            else if ($login == "f")
+                header("Location: /user/home");
+                else
+                    header("Location: /");
     }
 
     public function show()

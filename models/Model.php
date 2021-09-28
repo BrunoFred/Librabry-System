@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 abstract class Model
 {
     private $table = null;
@@ -46,8 +46,14 @@ abstract class Model
         $this->connect();
         $result = pg_query($this->connection, "SELECT * FROM users WHERE email = '$email' AND password = '$password'");
         $login_check = pg_num_rows($result);
-        if ($login_check > 0)
-            return true;
+        if ($login_check > 0){
+            $data = pg_fetch_all($result);
+            $_SESSION['name'] = $data[0]["name"];
+            $_SESSION['email'] = $data[0]["email"];
+            $_SESSION['phone'] = $data[0]["phone"];
+            $_SESSION['email'] = $data[0]["email"];
+            return $data[0]["is_admin"];
+        }
         $this->desconnect();
     }
 
