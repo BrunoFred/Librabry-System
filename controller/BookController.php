@@ -33,6 +33,12 @@ class BookController
         include './resources/views/admin/books.php';
     }
 
+    public function indexForUsers()
+    {
+        $books = $this->book->all();
+        include './resources/views/user/books.php';
+    }
+
     public function show()
     {
         $show = $this->book->find($this->id);

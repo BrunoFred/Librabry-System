@@ -5,16 +5,29 @@ require_once('./models/Loan.php');
 class LoanController
 {
     public $loans;
+    private $data;
 
     public function __construct()
     {
         $this->loans = new Loan();
+        $this->data = array(
+            "date_start"=>date_default_timezone_set('America/Sao_Paulo'),
+            "date_end"=>date_default_timezone_set('America/Sao_Paulo'),
+            "user_id"=>$_SESSION['id'],
+            "book_id"=>$_POST['id']
+        );
     }
 
     public function index()
     {
         $loans = $this->loans->all();
         include './resources/views/admin/check_loan.php';
+    }
+
+    public function showByUser()
+    {
+        $loans = $this->loans->all();
+        include './resources/views/user/user_loans.php';
     }
 
     public function show()
@@ -29,7 +42,7 @@ class LoanController
 
     public function store()
     {
-
+        $loans = $this->loans->create($this->data);
     }
 
     public function edit()

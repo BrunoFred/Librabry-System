@@ -15,7 +15,6 @@ include "./resources/views/layout/head.php";
         </div>
     </div>
     <?php foreach ($books as $book){ ?>
-        <?php if($book['name']!= NULL){?>
             <div class="books">
                 <img class="folder" src=<?= $book['book_cover']?>>
                 <ul>
@@ -36,7 +35,6 @@ include "./resources/views/layout/head.php";
                         </div>
                     </form>
             </div>
-        <?php } else {}?>
         </div>
     <?php } ?>
     <?php

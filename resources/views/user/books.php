@@ -15,7 +15,6 @@ include "./resources/views/layout/nav.php";
     </div>
 </div>
 <?php foreach ($books as $book){ ?>
-    <?php if($book['name']!= NULL){?>
         <div class="books">
         <img class="folder" src=<?= $book['book_cover']?>>
         <ul>
@@ -29,14 +28,13 @@ include "./resources/views/layout/nav.php";
             <h4>Description</h4>
             <h1><?= $book['description'] ?></h1>
 
-            <form method="POST" action="/books/edit">
+            <form method="POST" action="/books/makeloan">
                 <input type="hidden" name="id" value="<?= $book['id'] ?>">
                 <div class="book-button-outside">
-                    <button type="submit" class="book-button">Update</button>
+                    <button type="submit" class="book-button">Get Book</button>
                 </div>
             </form>
         </div>
-    <?php } else {}?>
     </div>
 <?php } ?>
 <?php

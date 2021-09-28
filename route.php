@@ -28,6 +28,9 @@ switch ($request) {
     case  '/users' :
         (new UserController())->index();
         break;
+    case '/users/loans' :
+        (new LoanController())->showByUser();
+        break;
     case '/users/create' :
         (new UserController())->create();
         break;
@@ -53,6 +56,9 @@ switch ($request) {
     case '/books/create' :
         (new BookController())->create();
         break;
+    case '/books/loan' :
+        (new BookController())->indexForUsers();
+        break;
     case '/books/store' :
         (new BookController())->store();
         header("Location: /books/create");
@@ -67,6 +73,9 @@ switch ($request) {
     case '/books/delete' :
         (new BookController())->delete();
         header("Location: /books");
+        break;
+    case '/loans/store' :
+        (new LoanController())->store();
         break;
     default:
         http_response_code(404);
