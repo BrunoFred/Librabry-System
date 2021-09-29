@@ -20,7 +20,14 @@ include "./resources/views/layout/nav.php";
                         <h6>Status: <?= $book['status'] ?></h6>
                     <?php } ?>
                     <h6>Date Start: <?= $loan['date_start'] ?></h6>
-                    <h6>Date End: <?= $loan['date_start'] ?></h6>
+                    <h6>Date End: <?= $loan['date_end'] ?></h6>
+                    <form method="POST" action="/loans/devolve">
+                        <input type="hidden" name="id" value="<?= $loan['id'] ?>">
+                        <input type="hidden" name="book_id" value="<?= $book['id'] ?>">
+                        <div class="book-button-outside">
+                            <button type="submit" class="book-button">Finish Loan</button>
+                        </div>
+                    </form>
                 </div>
             <?php }
         } ?>

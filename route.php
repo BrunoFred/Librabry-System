@@ -10,6 +10,9 @@ switch ($request) {
     case '/' :
         (new LoginController())->index();
         break;
+    case '/logout' :
+        require __DIR__ .'/resources/views/logout.php';
+        break;
     case '/admin/home' :
         require __DIR__ . '/resources/views/admin/home.php';
         break;
@@ -45,9 +48,16 @@ switch ($request) {
     case '/users/edit' :
         (new UserController())->edit();
         break;
+    case '/users/selfEdit' :
+        (new UserController())->selfEdit();
+        break;
     case '/users/update' :
         (new UserController())->update();
         header("Location: /users");
+        break;
+    case '/users/selfUpdate' :
+        (new UserController())->selfUpdate();
+        header("Location: /logout");
         break;
     case '/users/delete' :
         (new UserController())->delete();
@@ -76,6 +86,11 @@ switch ($request) {
         break;
     case '/loans/store' :
         (new LoanController())->store();
+        header("Location: /books/loan");
+        break;
+    case '/loans/devolve' :
+        (new LoanController())->delete();
+        header("Location: /users/loans");
         break;
     default:
         http_response_code(404);

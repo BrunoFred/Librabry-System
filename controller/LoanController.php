@@ -10,9 +10,11 @@ class LoanController
     public function __construct()
     {
         $this->loans = new Loan();
+        $dateStart = date("Y-m-d H:i:s", time() + 3600*(date("I")));
+        $dateEnd = date("Y-m-d H:i:s", strtotime($dateStart. ' + 7 days'));
         $this->data = array(
-            "date_start"=>date_default_timezone_set('America/Sao_Paulo'),
-            "date_end"=>date_default_timezone_set('America/Sao_Paulo'),
+            "date_start"=>$dateStart,
+            "date_end"=>$dateEnd,
             "user_id"=>$_SESSION['id'],
             "book_id"=>$_POST['id']
         );
@@ -42,7 +44,9 @@ class LoanController
 
     public function store()
     {
-        $loans = $this->loans->create($this->data);
+        $this->loans->create($this->data);
+        $dataUpdate = array("status"=>'pending');
+        (new Book())->update($_POST['id'], $dataUpdate);
     }
 
     public function edit()
@@ -57,6 +61,8 @@ class LoanController
 
     public function delete()
     {
- 
+        $this->loans->delete($_POST['id']);
+        $dataUpdate = array("status"=>'available');
+        (new Book())->update($_POST['book_id'], $dataUpdate);
     }
 }

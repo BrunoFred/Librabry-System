@@ -36,7 +36,7 @@ abstract class Model
     public function all()
     {
         $this->connect();
-        $result = pg_query($this->connection, "SELECT * FROM $this->table");
+        $result = pg_query($this->connection, "SELECT * FROM $this->table ORDER BY ID");
         $this->desconnect();
         return (pg_fetch_all($result));
     }
@@ -52,6 +52,8 @@ abstract class Model
             $_SESSION['name'] = $data[0]["name"];
             $_SESSION['email'] = $data[0]["email"];
             $_SESSION['phone'] = $data[0]["phone"];
+            $_SESSION['password'] = $data[0]["password"];
+            $_SESSION['is_admin'] = $data[0]["is_admin"];
             return $data[0]["is_admin"];
         }
         $this->desconnect();

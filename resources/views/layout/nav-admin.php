@@ -11,6 +11,6 @@
         <a href="/loans">Loans List</a>
         <a href="/users">Users List</a>
         <a href="/users/create">Create User</a>
-        <a href="/">Logout</a>
+        <a href="/logout">Logout</a>
         </div>
 </section>

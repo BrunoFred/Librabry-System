@@ -6,7 +6,7 @@ class UserController
     public $users, $user;
     public $id, $email, $password, $login;
     protected $data;
-    protected $data_update;
+    protected $data_update, $self_update;
     protected $data_register;
 
     public function __construct()
@@ -29,6 +29,17 @@ class UserController
             'name'=>$_POST['name'],
             'phone'=>$_POST['phone'],
             'is_admin'=>$_POST['is_admin'],
+            "created_at"=>NULL,
+            "updated_at"=>NULL,
+            "deleted_at"=>NULL
+        );
+
+        $this->self_update = array(
+            'email'=>$_POST['email'],
+            'password'=>$_POST['password'],
+            'name'=>$_POST['name'],
+            'phone'=>$_POST['phone'],
+            'is_admin'=>false,
             "created_at"=>NULL,
             "updated_at"=>NULL,
             "deleted_at"=>NULL
@@ -94,9 +105,19 @@ class UserController
         include './resources/views/admin/update_user.php';
     }
 
+    public function selfEdit()
+    {
+        include './resources/views/user/update_user.php';
+    }
+
     public function update()
     {
         $this->users->update($this->id, $this->data_update);
+    }
+
+    public function selfUpdate()
+    {
+        $this->users->update($_SESSION['id'], $this->self_update);
     }
 
     public function delete()
