@@ -25,7 +25,7 @@
                 <label for="Quantity">Quantity:</label><br>
                 <input type="number" id="quantity" name="quantity" required>
                 <label for="book_cover">Book Cover:</label><br>
-                <input type="file" id="book_cover" name="book_cover" required>
+                <input type="text" id="book_cover" name="book_cover" required>
                 <input type="submit" value="Submit">
             </div>
         </form>
